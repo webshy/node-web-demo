@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 // import Home from '../views/Home.vue'
 import Main from '../views/Main.vue'
+import CategoryEdit from '../views/categoryEdit'  
+import CategoryList from '../views/categoryList'   
 
 
 Vue.use(VueRouter)
@@ -10,7 +12,12 @@ Vue.use(VueRouter)
   {
     path: '/',
     name: 'Main',
-    component: Main
+    component: Main,
+    children: [
+      {path : '/categories/create', component:CategoryEdit },
+      {path : '/categories/edit/:id', component:CategoryEdit,props:true },
+      {path : '/categories/list', component:CategoryList }
+    ]
   },
   {
     path: '/about',
