@@ -12,9 +12,14 @@
             <el-menu-item index="/categories/list">分类列表</el-menu-item>
           </el-menu-item-group>
           <el-menu-item-group>
-            <template slot="title">分类</template>
+            <template slot="title">物品</template>
             <el-menu-item index="/items/create">新建物品</el-menu-item>
             <el-menu-item index="/items/list">物品列表</el-menu-item>
+          </el-menu-item-group>
+          <el-menu-item-group>
+            <template slot="title">英雄</template>
+            <el-menu-item index="/heros/create">新建英雄</el-menu-item>
+            <el-menu-item index="/heros/list">英雄列表</el-menu-item>
           </el-menu-item-group>
         </el-submenu>
       </el-menu>
@@ -63,6 +68,9 @@ export default {
     return {
       tableData: Array(20).fill(item)
     };
+  },
+  created(){
+    document.title = '观星台Future'
   }
 };
 </script>
