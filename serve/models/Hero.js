@@ -12,10 +12,14 @@ const schema = new mongoose.Schema({
     survive: { type: Number },
   },
   skills: [
-    { icon: String },
-    { name: String },
-    { desciption: String },
-    { tips: String }
+    {
+      icon: { type: String },
+      name: { type: String },
+      delay: { type: String },
+      cost: { type: String },
+      description: { type: String },
+      tips: { type: String },
+    }
   ],
   items1: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Item' }],
   items2: [{ type: mongoose.SchemaTypes.ObjectId, ref: 'Item' }],

@@ -73,7 +73,7 @@
           <el-button type="text" @click="model.skills.push({})">
             <i class="el-icon-plus"></i> 添加技能
           </el-button>
-          <el-row type="flex" style="flex-wrap:wrap">
+          <el-row type="flex" style="flex -wrap:wrap">
             <el-col :md="12" v-for="(item,i) in model.skills" :key="i">
               <el-form-item label="名称">
                 <el-input v-model="item.name"></el-input>
@@ -84,7 +84,7 @@
                   action="http://localhost:4400/admin/api/upload"
                   :headers="getAuthHeaders()"
                   :show-file-list="false"
-                  :on-success="afterUpload"
+                  :on-success="res => $set(item ,'icon' , res.url )"
                 >
                   <img v-if="item.icon" :src="item.icon" class="avatar" />
                   <i v-else class="el-icon-plus avatar-uploader-icon"></i>
@@ -197,14 +197,14 @@ export default {
 .avatar-uploader-icon {
   font-size: 28px;
   color: #8c939d;
-  width: 178px;
-  height: 178px;
-  line-height: 178px;
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
   text-align: center;
 }
 .avatar {
-  width: 178px;
-  height: 178px;
+  width: 5rem;
+  height: 5rem;
   display: block;
 }
 /* .el-rate {
