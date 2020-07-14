@@ -11,6 +11,9 @@ import ItemList from '../views/itemList'
 import HeroEdit from '../views/heroEdit'   
 import HeroList from '../views/heroList'   
 
+import ArticlesEdit from '../views/articlesEdit'   
+import ArticlesList from '../views/articlesList'   
+
 
 
 
@@ -33,6 +36,10 @@ Vue.use(VueRouter)
       {path : '/heros/create', component:HeroEdit },
       {path : '/heros/edit/:id', component:HeroEdit,props:true },
       {path : '/heros/list', component:HeroList },
+
+      {path : '/articles/create', component:ArticlesEdit },
+      {path : '/articles/edit/:id', component:ArticlesEdit,props:true },
+      {path : '/articles/list', component:ArticlesList },
 
     ]
   },
