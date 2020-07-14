@@ -17,6 +17,9 @@ import ArticlesList from '../views/articlesList'
 import AdEdit from '../views/adEdit'   
 import AdList from '../views/adList'   
 
+import AdminUserEdit from '../views/adminUserEdit'   
+import AdminUserList from '../views/adminUserList'   
+
 
 
 
@@ -47,6 +50,11 @@ Vue.use(VueRouter)
       {path : '/ads/create', component:AdEdit },
       {path : '/ads/edit/:id', component:AdEdit,props:true },
       {path : '/ads/list', component:AdList },
+
+      {path : '/admin_users/create', component:AdminUserEdit },
+      {path : '/admin_users/edit/:id', component:AdminUserEdit,props:true },
+      {path : '/admin_users/list', component:AdminUserList },
+
 
     ]
   },
