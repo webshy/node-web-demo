@@ -12,4 +12,4 @@ require('./routes/admin/index')(app)
 
 app.listen(4400,() => {
   console.log('http://localhost:4400')
-})
+}) 

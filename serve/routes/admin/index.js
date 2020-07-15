@@ -64,8 +64,12 @@ module.exports = app => {
     const model = await req.Model.findById(req.params.id)
     res.send(model)
   })
-  app.use('/admin/api/rest/:resource', async (req, res, next) => {
-    // const modelName = require('inflection').classify(req.params.resource)
+
+    // 登录校验中间件
+    const authMiddleware = require('../../middleware/auth')
+    const resourceMiddleware = require('../../middleware/resource')
+
+  app.use('/admin/api/rest/:resource', authMiddleware(), resourceMiddleware(), async (req, res, next) => {
     console.log(req.params, '--')
     const modelName = require('inflection').classify(req.params.resource)
     req.Model = require(`../../models/${modelName}`)
